@@ -1,0 +1,93 @@
+body, html {
+	margin: 0px;
+	padding: 0px;
+	background-image: url(bg.png);
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.center {
+    margin: 0px auto;
+    text-align: center;
+}	
+
+#canvas1 {
+	background-color: #FFF;
+	background-image: url(bg.png);
+	z-index: 1;
+}
+
+#canvas2 {
+	z-index: 2;
+}
+
+#logo {
+	margin: 40px 0;
+	max-width: 90%;
+}
+
+#wrapper-canvas {
+	position: relative;
+}
+
+#panel {
+	margin: 8px auto;
+	color: #FFF;
+}
+
+#panel div {
+	display:inline-block;
+	padding: 8px 12px;
+	min-width: 32px;
+	height: 32px;
+	cursor: pointer;
+}
+
+#panel span {
+	display: inline-block;
+}
+
+#tw {
+	background-color: #33B5E5;
+}
+
+#fb {
+	background-color: #0099CC;
+}
+
+#score {
+	background-color: #F06500;
+}
+
+#score img {
+	-webkit-transition: -webkit-transform 0.5s ease-in-out;
+       -moz-transition:    -moz-transform 0.5s ease-in-out;
+         -o-transition:      -o-transform 0.5s ease-in-out;
+            transition:         transform 0.5s ease-in-out;
+}
+
+.rotate {
+    -webkit-transform: rotate(180deg);
+       -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+#score-points {
+	font-size: 28px;
+	line-height: 32px;
+	vertical-align: top;
+	font-weight:bold;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+
+}
+
+#reset {
+	background-color: #FF4444;
+}
+/* http://www.cssbuttongenerator.com/ */
