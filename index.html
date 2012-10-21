@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Colo - simple HTML5 mobile game</title>
+	<meta charset="UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<div id='main-wrapper' class='center'>
+		<img id='logo' src='logo.png' alt='Colo - simple HTML5 mobile game' />
+		<div id='panel'>
+			<div id='tw'>
+				<img src='t.png' />
+			</div>
+			<div id='fb'>
+				<img src='f.png' />
+			</div>
+			<div id='score'>
+				<img id='score-img' src='s.png' />
+				<span id='score-points'>0</span>
+			</div>
+			<div id='reset'>
+				<img src='r.png' />
+			</div>
+		</div>
+		<div id='wrapper-canvas' class='center'>
+			<canvas id='canvas1'></canvas>
+			<canvas id='canvas2'></canvas>
+		</div>
+	</div>
+
+	<script src="modernizr.js"></script>
+	<script src="helper.js"></script>	
+	<script src="render.js"></script>
+	<script src="highscore.js"></script>
+	<script src="game.js"></script>
+	<script>
+
+		var game = new Game();
+
+		window.onload = function(e) {
+			game.init();
+		}
+
+		if (Modernizr.touch){
+			
+			game.touch = true;
+			document.getElementById('canvas2').addEventListener('touchstart', function(event) {
+				
+				if (event.targetTouches.length == 1) {
+					var touch = event.targetTouches[0];
+					
+					game.handle_click(touch);
+				}
+			}, false);		
+		} else {
+			window.onclick = function(event) {
+				game.handle_click(event);
+			}
+		}
+
+		/* Buttons click handle */
+
+		document.getElementById('tw').onclick = function() {
+			game.share_tw();
+		}
+
+		document.getElementById('fb').onclick = function() {
+			game.share_fb();
+		}
+
+		document.getElementById('score').onclick = function() {
+			game.show_high_score();
+		}
+
+		document.getElementById('reset').onclick = function() {
+			game.reset();
+		}
+
+	 
+	</script>
+</body>
+</html>
